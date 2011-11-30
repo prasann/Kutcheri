@@ -7,17 +7,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.tw.R;
+import com.tw.domain.Detail;
 
 import java.util.List;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
-public class EventListAdapter extends ArrayAdapter<String> {
+public class EventListAdapter extends ArrayAdapter<Detail> {
 
-    private List<String> items;
+    private List<Detail> items;
     private Context myContext;
 
-    public EventListAdapter(Context context, int textViewResourceId, List<String> items) {
+    public EventListAdapter(Context context, int textViewResourceId, List<Detail> items) {
         super(context, textViewResourceId, items);
         this.items = items;
         this.myContext = context;
@@ -30,11 +31,15 @@ public class EventListAdapter extends ArrayAdapter<String> {
             LayoutInflater vi = (LayoutInflater) myContext.getSystemService(LAYOUT_INFLATER_SERVICE);
             view = vi.inflate(R.layout.event_row, null);
         }
-        String displayName = items.get(position);
-        if (displayName != null) {
-            TextView displayNameView = (TextView) view.findViewById(R.id.displayName);
-            if (displayNameView != null) {
-                displayNameView.setText(displayName);
+        Detail detail = items.get(position);
+        if (detail != null) {
+            TextView title = (TextView) view.findViewById(R.id.title);
+            TextView description = (TextView) view.findViewById(R.id.description);
+            if (description != null) {
+                description.setText(detail.getDescription());
+            }
+            if (title != null) {
+                title.setText(detail.getTitle());
             }
         }
         return view;
