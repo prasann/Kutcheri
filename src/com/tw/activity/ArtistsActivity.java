@@ -1,15 +1,27 @@
 package com.tw.activity;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import com.tw.R;
+import com.tw.adapter.EventListAdapter;
 
-public class ArtistsActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArtistsActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        TextView textview = new TextView(this);
-        textview.setText("This is the Artists tab");
-        setContentView(textview);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.event_list);
+        List<String> items = new ArrayList<String>() {
+            {
+                add("Artist1");
+                add("Artist2");
+                add("Artist3");
+                add("Artist4");
+            }
+        };
+        EventListAdapter eventListAdapter = new EventListAdapter(this, R.layout.event_row, items);
+        this.setListAdapter(eventListAdapter);
     }
 }

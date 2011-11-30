@@ -1,15 +1,28 @@
 package com.tw.activity;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import com.tw.R;
+import com.tw.adapter.EventListAdapter;
 
-public class SabhaActivity extends Activity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SabhaActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        TextView textview = new TextView(this);
-        textview.setText("This is the Sabha tab");
-        setContentView(textview);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.event_list);
+        List<String> items = new ArrayList<String>() {
+            {
+                add("Sabha1");
+                add("Sabha2");
+                add("Sabha3");
+                add("Sabha4");
+                add("Sabha5");
+            }
+        };
+        EventListAdapter eventListAdapter = new EventListAdapter(this, R.layout.event_row, items);
+        this.setListAdapter(eventListAdapter);
     }
 }
