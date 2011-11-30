@@ -2,7 +2,6 @@ package com.tw.activity;
 
 import android.app.TabActivity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.widget.TabHost;
 import com.tw.R;
@@ -12,23 +11,16 @@ public class SearchActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabs);
 
-        Resources res = getResources();
         TabHost tabHost = getTabHost();
-        TabHost.TabSpec spec;
-        Intent intent;
 
-        intent = new Intent().setClass(this, ArtistsActivity.class);
-        spec = tabHost.newTabSpec("artists").setIndicator("Artists").setContent(intent);
+        addTab(tabHost, "artists", "Artists");
+        addTab(tabHost, "instruments", "Instruments");
+        addTab(tabHost, "sabha", "Sabha");
+    }
+
+    private void addTab(TabHost tabHost, String tabId, String tabDisplayName) {
+        Intent intent = new Intent().setClass(this, ArtistsActivity.class);
+        TabHost.TabSpec spec = tabHost.newTabSpec(tabId).setIndicator(tabDisplayName).setContent(intent);
         tabHost.addTab(spec);
-
-        intent = new Intent().setClass(this, InstrumentsActivity.class);
-        spec = tabHost.newTabSpec("albums").setIndicator("Instruments").setContent(intent);
-        tabHost.addTab(spec);
-
-        intent = new Intent().setClass(this, SabhaActivity.class);
-        spec = tabHost.newTabSpec("songs").setIndicator("Sabha").setContent(intent);
-        tabHost.addTab(spec);
-
-        tabHost.setCurrentTab(2);
     }
 }
