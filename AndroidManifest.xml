@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.tw">
     <application android:icon="@drawable/icon" android:label="@string/app_name"
-                 android:theme="@android:style/Theme.NoTitleBar">
+                 android:theme="@android:style/Theme.Light.NoTitleBar">
         <activity android:name=".activity.ArtistsActivity"/>
         <activity android:name=".activity.SabhaActivity"/>
         <activity android:name=".activity.InstrumentsActivity"/>

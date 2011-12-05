@@ -10,12 +10,22 @@ package com.tw;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int black=0x7f050000;
+    }
     public static final class drawable {
-        public static final int icon=0x7f020000;
+        public static final int blue_arrow=0x7f020000;
+        public static final int ic_artist=0x7f020001;
+        public static final int ic_instrument=0x7f020002;
+        public static final int ic_sabha=0x7f020003;
+        public static final int ic_tab_artist=0x7f020004;
+        public static final int ic_tab_instrument=0x7f020005;
+        public static final int ic_tab_sabha=0x7f020006;
+        public static final int icon=0x7f020007;
     }
     public static final class id {
-        public static final int description=0x7f060001;
-        public static final int title=0x7f060000;
+        public static final int description=0x7f070001;
+        public static final int title=0x7f070000;
     }
     public static final class layout {
         public static final int event_list=0x7f030000;
@@ -28,6 +38,6 @@ public final class R {
         public static final int sabha=0x7f040002;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
+        public static final int app_name=0x7f060000;
     }
 }
