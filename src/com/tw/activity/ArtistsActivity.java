@@ -8,7 +8,7 @@ import com.tw.domain.Detail;
 
 import java.util.List;
 
-import static com.tw.utilities.HttpUtils.getJSONResponse;
+import static com.tw.utilities.FileUtils.getJSONResponse;
 import static com.tw.utilities.JSONUtil.constructItems;
 
 public class ArtistsActivity extends ListActivity {
@@ -16,7 +16,7 @@ public class ArtistsActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_list);
-        String responseBody = getJSONResponse("http://www.ilovemadras.com/api/get_artiste_index");
+        String responseBody = getJSONResponse(this.getResources(), R.raw.artist);
         List<Detail> details = constructItems("artistes", responseBody);
         EventListAdapter eventListAdapter = new EventListAdapter(this, R.layout.event_row, details);
         this.setListAdapter(eventListAdapter);

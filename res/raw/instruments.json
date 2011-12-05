@@ -1,0 +1,125 @@
+{
+    "status": "ok",
+    "count": 17,
+    "instruments": {
+        "0": {
+            "id": 660,
+            "slug": "chitraveena",
+            "title": "Chitraveena",
+            "description": "Chitraveena",
+            "post_count": 1
+        },
+        "1": {
+            "id": 654,
+            "slug": "dholki",
+            "title": "Dholki",
+            "description": "Dholki",
+            "post_count": 1
+        },
+        "2": {
+            "id": 662,
+            "slug": "flute",
+            "title": "Flute",
+            "description": "Flute",
+            "post_count": 5
+        },
+        "3": {
+            "id": 649,
+            "slug": "ghatam",
+            "title": "Ghatam",
+            "description": "Ghatam",
+            "post_count": 35
+        },
+        "4": {
+            "id": 729,
+            "slug": "harikatha",
+            "title": "Harikatha",
+            "description": "",
+            "post_count": 1
+        },
+        "5": {
+            "id": 650,
+            "slug": "kanjira",
+            "title": "Kanjira",
+            "description": "Kanjira",
+            "post_count": 18
+        },
+        "6": {
+            "id": 657,
+            "slug": "konnakkol",
+            "title": "Konnakkol",
+            "description": "Konnakkol",
+            "post_count": 1
+        },
+        "7": {
+            "id": 653,
+            "slug": "mandolin",
+            "title": "Mandolin",
+            "description": "Mandolin",
+            "post_count": 1
+        },
+        "8": {
+            "id": 659,
+            "slug": "morsing",
+            "title": "Morsing",
+            "description": "Morsing",
+            "post_count": 11
+        },
+        "9": {
+            "id": 646,
+            "slug": "mridangam",
+            "title": "Mridangam",
+            "description": "Mridangam",
+            "post_count": 82
+        },
+        "10": {
+            "id": 658,
+            "slug": "nadhaswaram",
+            "title": "Nadhaswaram",
+            "description": "Nadhaswaram",
+            "post_count": 4
+        },
+        "11": {
+            "id": 648,
+            "slug": "pakhawaj",
+            "title": "Pakhawaj",
+            "description": "Pakhawaj",
+            "post_count": 1
+        },
+        "13": {
+            "id": 740,
+            "slug": "tabla",
+            "title": "Tabla",
+            "description": "",
+            "post_count": 1
+        },
+        "14": {
+            "id": 647,
+            "slug": "tavil",
+            "title": "Tavil",
+            "description": "Tavil",
+            "post_count": 3
+        },
+        "15": {
+            "id": 651,
+            "slug": "veena",
+            "title": "Veena",
+            "description": "Veena",
+            "post_count": 5
+        },
+        "16": {
+            "id": 652,
+            "slug": "violin",
+            "title": "Violin",
+            "description": "Violin",
+            "post_count": 81
+        },
+        "17": {
+            "id": 661,
+            "slug": "vocal",
+            "title": "Vocal",
+            "description": "Vocal",
+            "post_count": 112
+        }
+    }
+}

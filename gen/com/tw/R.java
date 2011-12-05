@@ -14,15 +14,20 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int description=0x7f050001;
-        public static final int title=0x7f050000;
+        public static final int description=0x7f060001;
+        public static final int title=0x7f060000;
     }
     public static final class layout {
         public static final int event_list=0x7f030000;
         public static final int event_row=0x7f030001;
         public static final int tabs=0x7f030002;
     }
+    public static final class raw {
+        public static final int artist=0x7f040000;
+        public static final int instruments=0x7f040001;
+        public static final int sabha=0x7f040002;
+    }
     public static final class string {
-        public static final int app_name=0x7f040000;
+        public static final int app_name=0x7f050000;
     }
 }
