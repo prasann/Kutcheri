@@ -1,7 +1,5 @@
 package com.tw.activity;
 
-import android.app.ListActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -14,7 +12,9 @@ import com.tw.utilities.JSONUtil;
 
 import java.util.List;
 
-public class InstrumentsActivity extends ListActivity implements MyTabActivity {
+import static com.tw.domain.Tabs.INSTRUMENT;
+
+public class InstrumentsActivity extends MyTabActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
@@ -29,14 +29,6 @@ public class InstrumentsActivity extends ListActivity implements MyTabActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Detail detail = (Detail) this.getListAdapter().getItem(position);
-        new FetchDetails(detail, "get_events_by_instrument", this).execute();
-    }
-
-    public void startEventDisplayActivity(String jsonResponse) {
-        Intent intent = new Intent(this, DisplayEvent.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("jsonResponse", jsonResponse);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        new FetchDetails(detail, INSTRUMENT, this).execute();
     }
 }

@@ -5,24 +5,25 @@ import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import com.tw.activity.MyTabActivity;
 import com.tw.domain.Detail;
+import com.tw.domain.Tabs;
 
 import static com.tw.utilities.HttpUtils.getJSONResponse;
 
 public class FetchDetails extends AsyncTask<Void, Void, String> {
 
     private Detail detail;
-    private String api;
+    private Tabs tab;
     private Activity activity;
     private ProgressDialog myProgressDialog;
 
-    public FetchDetails(Detail detail, String api, Activity activity) {
+    public FetchDetails(Detail detail, Tabs tab, Activity activity) {
         this.detail = detail;
-        this.api = api;
+        this.tab = tab;
         this.activity = activity;
     }
 
     private String fetchDetails() {
-        return getJSONResponse("http://www.ilovemadras.com/api/" + api + "?id=" + detail.getId());
+        return getJSONResponse("http://www.ilovemadras.com/api/" + tab.getApiName() + "?id=" + detail.getId());
     }
 
     @Override
@@ -34,7 +35,7 @@ public class FetchDetails extends AsyncTask<Void, Void, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         myProgressDialog = ProgressDialog.show(activity,
-                "Please wait...", "Loading  information... ", true);
+                "Please wait...", tab.getProgressDialogText(), true);
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.tw.domain;
 
 import org.json.JSONObject;
 
-public class Detail {
+public class Detail implements Comparable<Detail> {
     private Integer id;
     private String slug;
     private String title;
@@ -44,5 +44,9 @@ public class Detail {
 
     public int getCount() {
         return count;
+    }
+
+    public int compareTo(Detail detail) {
+        return this.getTitle().compareTo(detail.getTitle());
     }
 }

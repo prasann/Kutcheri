@@ -2,6 +2,7 @@ package com.tw.utilities;
 
 import com.tw.domain.Detail;
 import com.tw.domain.EventInfo;
+import com.tw.domain.Tabs;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -11,12 +12,13 @@ import java.util.List;
 
 import static com.tw.domain.Detail.getDetail;
 import static com.tw.domain.EventInfo.getEvent;
+import static java.util.Collections.sort;
 
 public class JSONUtil {
     public static List<Detail> constructDetailsForInstruments(String responseBody) {
         List<Detail> details = new ArrayList<Detail>();
         try {
-            JSONObject jsonObject = new JSONObject(responseBody).getJSONObject("instruments");
+            JSONObject jsonObject = new JSONObject(responseBody).getJSONObject(Tabs.INSTRUMENT.getTagName());
             Iterator keys = jsonObject.keys();
             while (keys.hasNext()) {
                 details.add(getDetail(jsonObject.getJSONObject((String) keys.next())));
@@ -24,6 +26,7 @@ public class JSONUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        sort(details);
         return details;
     }
 
@@ -37,6 +40,7 @@ public class JSONUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        sort(details);
         return details;
     }
 
